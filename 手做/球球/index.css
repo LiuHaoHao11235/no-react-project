@@ -1,0 +1,99 @@
+.ball {
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    margin: 0;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: -20px -17px 64px 12px #000 inset;
+    background-repeat: repeat;
+    background-image: url('../下載.jpg');
+    background-size: cover;
+    animation: move-map 10s linear infinite;
+  }
+.un{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1900px;
+  margin: 0;
+  height: 100%;
+  background-repeat: repeat;
+  position: relative;
+  background-image: url('../—Pngtree—tranquil\ universe\ background_1337175.png');
+  background-size: cover;
+}
+.smallball{
+  margin-left: 20px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: -20px -17px 64px 12px #000 inset;
+  background-repeat: repeat;
+  background-image: url('../300.jpg');
+  background-size: contain;
+  animation: move-map 10s linear infinite;
+  margin-right:0;
+  margin-left: 200px;
+  bottom: 0;
+  right: 0;
+  visibility:visible;
+}
+  body {
+    width: 100%;
+    margin:0px;
+    height: 100vh;
+  }
+.warp{
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content:center;
+  align-items: center;
+} 
+
+#stop0{
+  z-index: 1;
+}
+
+#stop1{
+  position: absolute;
+  display: block;
+  visibility: hidden;
+  z-index: 1;
+  top: -30px;
+  right:42%;
+} 
+#stop2{
+  z-index: 3;
+  display: block;
+  visibility: hidden;
+  margin-right:200px;
+} 
+#stop3{
+  z-index: 1;
+  position: absolute;
+  display: block;
+  visibility: hidden;
+  bottom: -60px;
+  right:800px;
+}  
+#stop4{
+  z-index: 1;
+  display: block;
+  visibility:hidden;
+  margin-left:-100px;
+}  
+  @keyframes move-map {
+    from {
+      background-position: 0 0; }
+    
+    to {
+      background-position: 1000px 0; } 
+    }
+    /* 能無限轉圈沒有斷續的(轉回原點)條件為 轉窗口偶數倍 且長寬1:1 用cover放大時不會變形 走不回原點 相反的圖片太大要用contain鎖住不然也走不回原點  */

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>Document</title>
+</head>
+<body>
+
+ <div class="app">
+    <h1>備忘錄</h1>
+    <textarea  id="content"cols="50" rows="5">
+      　輸入你想要寫的內容...
+    </textarea>
+    <input type="date" id="date"/>
+    <input type="time" id="time"/>
+    <button class="remove" id="deletedBtn2">刪除最新資料</button>
+    <button class="remove" id="deletedBtn">刪除最舊資料</button>
+    <button class="add" id="addedBtn">新增資料</button>
+    <div class="list" id="list">
+      <div class="item">
+        <div>
+          <p>內容：</p>
+          <p>時間：</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>

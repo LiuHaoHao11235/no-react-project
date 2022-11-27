@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    height:100vh;
+    background-color: aqua;
+    display: flex;
+    -webkit-user-select: none;       
+    user-select: none;
+}
+/*!!!!!!!!
+    -webkit-user-select: none;       
+    user-select: none;    
+    為了在滑動時不選去到旁邊的元素而中斷 !!!!!!! */
+
+
+
+.leftSide{
+    position: relative;
+    background-color:gray;
+}
+.rightSide{
+    background-color: blue;
+    flex:1;
+}
+.item{
+    padding:40px;
+
+}
+.item img{
+    max-width:100% ;
+    padding-right: 20px;
+}
+.item1{
+    padding:20px;
+    color: blueviolet;
+}
+
+.banner{
+    border: 1px rgb(26, 25, 25) solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width:20px;
+    right: 0;
+    top: 0;
+    cursor: col-resize;
+    position: absolute;
+    background-color: rgb(240, 236, 236);
+}
+.banner:hover{
+    border: 2px rgb(235, 156, 10) solid;
+}
+.banner i{
+    margin: 2px;
+    width: 2px;
+    display: inline-block;
+    background-color: black;
+    height: 30px;
+}

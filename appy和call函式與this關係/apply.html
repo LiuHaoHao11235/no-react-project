@@ -1,0 +1,32 @@
+<html>
+<body>
+<h2>JavaScript Functions</h2>
+<p>This example calls the fullName method of person, using it on person1:
+</p>
+<p id="demo"></p>
+
+<script>
+const persons = {
+  fullName: function(city, country) {
+  	console.log(this)
+    return this.firstName + " " + this.lastName + "," + city + "," + country; 
+  }
+}
+
+const person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+
+const person2 = {
+  firstName:"Mary",
+  lastName: "Doe"
+}
+
+document.getElementById("demo").innerHTML = persons.fullName.call(person1, "Oslo", "Norway");  
+//call跟apply的第一個參數person1是執行主物件persons中fullname方法的"主角"它取代了persons主物件本身 所以方法中的this是當參數傳入的物件
+</script>
+
+</body>
+
+</html>

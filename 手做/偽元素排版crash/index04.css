@@ -1,0 +1,178 @@
+@media screen and (min-width:400px){
+:root{
+    font-family:monospace;
+    font-size:15px;
+}
+.phone{
+    display: none;
+}
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: darkgreen;
+}
+.contain{
+    position:absolute;
+    width: 400px;
+    height: 142px;
+    background-color:grey;
+}
+.contain::before{ /*after before都可以*/
+    content: "";
+    position:absolute;
+    display: block;
+    width:inherit;
+    height:inherit;
+    border-top:2px;
+    border-right:1.5px;
+    border-bottom:2px;
+    border-left:2px;
+    border-style:solid;
+    border-color: white black black white ;
+    left: -2px; /*會偏移*/
+    top:-2px; /*會偏移*/
+    pointer-events:none;
+}
+.title{
+    background-color: blue;
+    color: #fff;
+    padding: 3px 4px;
+    box-sizing: border-box;
+    cursor: move;
+    border-top:0px;
+    border-right:1.5px;
+    border-bottom:1px;
+    border-left:0px;
+    border-style:solid;
+    border-color: rgb(6, 6, 122);
+    width:100%;  /*calc()計算以title 100%寬 扣掉border px寬 得到適合的寬度*/
+}
+
+
+.title span.close{
+    position: absolute;
+    background-color:red;
+    top: 0px;
+    right: 0px;
+    text-align: center;
+    cursor: pointer;
+    padding: 4px 4px 3px 4px;
+    border-radius: 2px;
+}
+
+.title span.close::before{
+    content:'✕';
+    color: white;
+}
+
+.message{
+    height: calc(100% - 24px); /*計算出扣掉title高度後下面剩多少高度可以給message給他的兒子元素做分配使用*/
+    display: flex;
+    flex-direction: column;  /*由上到下排 非左到右*/
+    align-items: center; /*message的兒子元素包(含他的text)置中*/
+    justify-content: space-around; /*將message的高度平分給他的兒子元素*/
+}
+.message button{
+    position: relative;
+    font-family: inherit;
+    width: 80px;
+    height: 18px;
+    text-align: center;
+    border:0;
+    padding:0;
+    margin:0;
+    font-size: 14px;
+    transition: .1s;
+    background-color:rgb(128, 122, 122);
+}
+.message button::before{
+    content: "";
+    border-width:1px;
+    border-top:2px;
+    border-right:2px;
+    border-bottom:2px;
+    border-left:2px;
+    border-style:solid;
+    border-color: white black black white ;
+    position: absolute;
+    display: block;
+    width:inherit;
+    height: inherit;
+    left: -2px; /*會偏移*/
+    top:-2px;   /*會偏移*/
+
+
+}
+
+
+
+.message button::after{
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-color: red ;
+    position: absolute;
+    display: block;
+    width:82px;
+    height: 20px;
+    left: -2px; /*會偏移*/
+    top:-2px;   /*會偏移*/
+    transform: scale(0);
+    transition:0.1s;
+    z-index: -1;
+
+
+}
+.message button:hover::after {
+    z-index: 0;
+    transform: scale(1);
+    border-top:2px;
+    border-right:1px;
+    border-bottom:1px;
+    border-left:2px;
+    border-style:solid;
+    border-color:blue;
+}
+button:hover{
+    font-weight: 800;
+    background-color: rgb(145, 136, 136);
+}
+.title span.close:hover{
+    background-color:rgb(190, 9, 9);
+}
+}
+@media screen and (max-width:400px){
+    :root{
+        font-family:monospace;
+        font-size:15px;
+    }
+    
+    body{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color:white;
+    }
+    .contain{
+        position:absolute;
+        background-color:white;
+    }
+    .title{
+        display: none;
+    }
+    .message{
+        display: none;
+    }
+    .phone{
+        color: blue;
+        display: block;
+    }
+
+}

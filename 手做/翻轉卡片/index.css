@@ -1,0 +1,95 @@
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+
+}
+.card{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:212px;
+    height:308px;
+    position: relative;
+    perspective: 1000px;
+}
+.front,.back{
+    border-radius:3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    backface-visibility: hidden;
+    transition: transform 0.25s;
+}
+.front{
+    background-color: aqua;
+    transform: rotateY(0deg);
+    box-shadow:1px 1px 20px 3px rgba(0, 0, 0, 0.5);
+}
+.back{
+    background-color: rgb(12, 233, 60);
+    transform: rotateY(-180deg);
+    box-shadow: 1px 1px 20px 3px rgba(0, 0, 0, 0.5);
+}
+.card img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+}
+.back::before{
+    pointer-events: none;
+    content: "";
+    border-width:1px;
+    border-top:2px;
+    border-right:3px;
+    border-bottom:3px;
+    border-left:2px;
+    border-style:solid;
+    border-color: white gray gray white  ;
+    position: absolute;
+    display: block;
+    width:inherit;
+    height: inherit;
+    left: -2px; /*會偏移*/
+    top:-2px;   /*會偏移*/
+
+
+}
+.front::before{
+    pointer-events: none;
+    content: "";
+    border-width:1px;
+    border-top:2px;
+    border-right:2px;
+    border-bottom:2px;
+    border-left:2px;
+    border-style:solid;
+    border-color: white gray gray white ;
+    position: absolute;
+    display: block;
+    width:inherit;
+    height: inherit;
+    left: -2px; /*會偏移*/
+    top:-2px;   /*會偏移*/
+}
+
+
+
+
+
+/* .card:hover .front{
+    box-shadow: -10px 12px 20px 2px rgba(0, 0, 0, 0.5);
+}
+.card:hover .back{
+    box-shadow: -10px 12px 20px 2px rgba(0, 0, 0, 0.5);
+} */
+/* box-shadow: x-位移 y-位移 blur-模糊的值 spread-擴散的值 color-顏色 inset-是否在內側 */
